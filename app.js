@@ -271,16 +271,17 @@ game.catchPokemon(pokemonToCatch);
 */
 
 
-// game.catchPokemon = function(pokemonObj) { //This is already called above in 11.//
-//   this.party.push(pokemonObj);
+game.catchPokemon = function(pokemonObj) {
+  this.party.push(pokemonObj);
 
   let pokeBallItem = game.items.findIndex((items) => items.name === 'pokeball');
   if(pokeBallItem !== -1) {
     game.items[pokeBallItem].quantity --;
   };
+}
+game.catchPokemon()
 
-
-// // Now I know how to use items (-- = minus 1 per cycle, -= is how i would substract based on what number I input.)
+// // Now I know how to use items (-- = minus 1 per cycle, -= is how i would substract based on what number I input. ++ to add 1 per cycle and += to add by the number i specify.)
 
 
 
@@ -341,7 +342,7 @@ game.gymStatus = () => {
           gymTally.incomplete ++
     }
   }
-  console.log(gymTally);
+  console.log("Gyms Badges: ", gymTally);
 }
 game.gymStatus()
 
